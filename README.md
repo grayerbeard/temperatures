@@ -36,14 +36,38 @@ sudo chown -R pi /var/www/html/
 ```
 
 You have several ways of starting the code
-* go to /home/pi/temperatures and enter 'python3 temperatures.py'  (do that first to ensure all dependancies are installed, or to debug any problem after changes)
-* go to /home/pi/temperatures and enter './tmux_start.sh' ((then view code output using 'tmux a')
+* do ((do this first to ensure all dependancies are installed, or to debug any problem after changes)
+```
+cd /home/pi/temperatures and enter
+python3 temperatures.py
+```  
+* do
+```cd /home/pi/temperatures
+./tmux_start.sh
+tmux a
+'''
 * set up to run automatically at reboot (then view code output using 'tmux a') by editing rc.local to do the autostart by calling the '/home/pi/temperatures/tmux_start.sh' bash file.
-        enter: 'sudo nano /etc/rc.local'
-        add before the "exit 0" this      'sudo -u pi bash /home/pi/temperatures/tmux_start.sh &'  
-        then check rc.local works by going to /etc folder and entering './rc.local'
+        enter: 
+        ```
+        sudo nano /etc/rc.local
+        ```
+        add before the "exit 0" this      
+        ```
+        sudo -u pi bash /home/pi/temperatures/tmux_start.sh &
+        ```
+        then check rc.local works by doing
+        ``` cd /etc
+        ./rc.local
+        ```
         then when restart Pi the python program should start automatically.
-        Code is now running in a tmux session and you can view it using 'tmux a -t temperatures'
+        Code runs n a tmux session and you can view it using 
+        ```
+        tmux a -t temperatures
+        ```
+        or just this if only one tmux session in use
+        ```
+        tmux a
+        ```
 
 While you are developing the code it is best to comment out the line in rc.local and run the code direct with the command "python3 temperatures.py".  The problem with tmux sessions is if the code crashes it can be hard to establish why.
 
