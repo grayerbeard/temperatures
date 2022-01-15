@@ -1,6 +1,7 @@
 number,code,location,stype,comment
-n1,28-0315a80584ff,Inside Air,TC,This is Controlled
-n2,28-0316062c0fff,Bench,TC,To monitor heating of objects in room
-n3,28-0316064402ff,Wall Inside,TC,To monitor Inside Wall Temperature
-n4,28-03160647b5ff,Wall Outside,TC, To Monitot Outside Wall Temperature
-n5,28-0115a869c1ff,Outside Air,To Monitor Outside Air Temperature
+n1,28-0315a80584ff,One,TC,abcdef
+n2,28-0316062c0fff,Two,TC,ghijkl
+n3,28-0316064402ff,Three,TC,mnopqrs
+n4,28-03160647b5ff,Four,TC,tuvwx
+n5,28-0115a869c1ff,Five,To yz
+

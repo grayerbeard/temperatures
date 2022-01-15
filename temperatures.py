@@ -226,7 +226,7 @@ def pt(where, message):
 		print("debug(pt) in: " , where , " : ", message, " at : " , str(datetime.datetime.now()), "\n")
 	return
 
-def pr(where,messabge,var_val):
+def pr(where,message,var_val):
 	global debug
 	# routine for debugging that prints message then a variables value
 	if debug:
@@ -251,7 +251,11 @@ def pr_status(appnd,ref,message):
 	except:
 		pr_log (True,"Fail with send html file to " + config.local_www_status_htlm_filename)
 	print ( "FTP for Status file File names  : " +  config.ftp_credentials_status_filename + " : " +  config.status_filename + " : " + "use_cred")
-	ftp_result = send_by_ftp(config.ftp_credentials_status_filename, config.status_filename,"use_cred")	
+	
+	# @@@
+	#ftp_result = send_by_ftp(config.ftp_credentials_status_filename, config.status_filename,"use_cred")	
+	ftp_result = "Commented out line 257"
+	
 	# uncomment next lines for more info on FTP reults
 	for pres_ind in range(0, len(ftp_result)):
 		print (ftp_result[pres_ind])
@@ -272,7 +276,11 @@ def pr_log(appnd,message):
 	except:
 		pr_status(True,0, "Fail with send html file to " + config.local_www_log_html_filename)
 	print ( "FTP for log html file File names   : " +  config.ftp_credentials_log_html_filename + " : " +  config.log_html_filename + " : " + "use_cred")
-	ftp_result = send_by_ftp(config.ftp_credentials_log_html_filename, config.log_html_filename,"use_cred")	
+	
+	# @@@
+	#ftp_result = send_by_ftp(config.ftp_credentials_log_html_filename, config.log_html_filename,"use_cred")	
+	ftp_result = "Commented out line 282"
+	
 	# uncomment next lines for more info on FTP reults
 	for pres_ind in range(0,len(ftp_result)):
 		print (ftp_result[pres_ind]	)
@@ -870,7 +878,11 @@ def send_temperature_data_using_ftp(ftp_credentials_file):
 			htmlfile.write(element)
 	
 	print ( "FTP for index html File names : " + " " + ftp_credentials_file + " : " + config.html_filename + " : " + "use_cred")
-	ftp_result = send_by_ftp(ftp_credentials_file, config.html_filename,"use_cred")
+	
+	# @@@
+	#ftp_result = send_by_ftp(ftp_credentials_file, config.html_filename,"use_cred")
+	ftp_result = "Commented out line 884"
+	
 	# uncomment following two for print of FTP
 	for pres_ind in range(0,len(ftp_result)):
 		print (ftp_result[pres_ind])
@@ -1276,7 +1288,9 @@ def main(argv):
 				log_temperature_data_to_file()
 			if config.ftplog_count > config.ftplog :
 			
-				ftp_result = send_by_ftp(config.ftp_credentials_log_filename, config.logging_filename, config.logging_filename_save_as)
+				# @@@
+				#ftp_result = send_by_ftp(config.ftp_credentials_log_filename, config.logging_filename, config.logging_filename_save_as)
+				ftp_result = "Commented out line 1293"
 				
 				#uncomment following two lines to get info on FTP attempts
 				for pres_ind in range(0,len(ftp_result)):
