@@ -39,3 +39,11 @@ You have several ways of starting the code
         Code is now running in a tmux session and you can view it using 'tmux a -t temperatures'
 
 While you are developing the code it is best to comment out the line in rc.local and run the code direct with the command "python3 temperatures.py".  The problem with tmux sessions is if the code crashes it can be hard to establish why.
+
+### About Temperature Sensors
+
+Click this for a Tutorial about Checking out the interface to temperature sensors.  It does mention it here but if you want to connect multiple sensors you just connect them all in parallel, you only need one resistor.
+
+https://tutorials-raspberrypi.com/raspberry-pi-temperature-sensor-1wire-ds18b20/
+
+This is the sensor I use:  https://shop.pimoroni.com/products/ds18b20-programmable-resolution-1-wire-digital-thermometer   it is functionally the same as https://thepihut.com/products/ds18b20-one-wire-digital-temperature-sensor.  Both items can be obtained far cheaper on eBay.
