@@ -10,10 +10,15 @@ It will probably take a month or so to get it sorted out.
 I will try to ensure the following is a full set of all needed instructions.
 
 Clone or download into folder /home/pi/temperatures.  Do this at the Terminal by typing
+
 this
+
 'mkdir temperatures'
+
 then this
+
 'git clone https://github.com/grayerbeard/temperatures.git /home/pi/temperatures".
+
 
 Install Tmux using 
 
