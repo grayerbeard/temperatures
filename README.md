@@ -13,11 +13,8 @@ Clone or download into folder /home/pi/temperatures.  Do this at the Terminal by
 
 this
 
-'mkdir temperatures'
-
-then this
-
-'git clone https://github.com/grayerbeard/temperatures.git /home/pi/temperatures".
+''' mkdir temperatures '
+git clone https://github.com/grayerbeard/temperatures.git /home/pi/temperatures '''
 
 
 Install Tmux using 
