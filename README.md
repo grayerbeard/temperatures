@@ -41,33 +41,39 @@ You have several ways of starting the code
 cd /home/pi/temperatures and enter
 python3 temperatures.py
 ```  
-* do
-```cd /home/pi/temperatures
+* to run code in a tmux session and view its output 
+```
+cd /home/pi/temperatures
 ./tmux_start.sh
 tmux a
-'''
-* set up to run automatically at reboot (then view code output using 'tmux a') by editing rc.local to do the autostart by calling the '/home/pi/temperatures/tmux_start.sh' bash file.
-        enter: 
-        ```
-        sudo nano /etc/rc.local
-        ```
-        add before the "exit 0" this      
-        ```
-        sudo -u pi bash /home/pi/temperatures/tmux_start.sh &
-        ```
-        then check rc.local works by doing
-        ``` cd /etc
-        ./rc.local
-        ```
-        then when restart Pi the python program should start automatically.
-        Code runs n a tmux session and you can view it using 
-        ```
-        tmux a -t temperatures
-        ```
-        or just this if only one tmux session in use
-        ```
-        tmux a
-        ```
+```
+
+* set up to run automatically at reboot by editing rc.local. To do this with the nano editor do: 
+```
+sudo nano /etc/rc.local
+```
+        
+add before the "exit 0"      
+```
+sudo -u pi bash /home/pi/temperatures/tmux_start.sh &
+```
+        
+then check rc.local works by doing
+``` 
+cd /etc
+./rc.local
+```
+        
+then when restart Pi the python program should start automatically.
+Code runs n a tmux session and you can view it using 
+```
+tmux a -t temperatures
+```
+        
+or just this if only one tmux session in use
+ ```
+tmux a
+ ```
 
 While you are developing the code it is best to comment out the line in rc.local and run the code direct with the command "python3 temperatures.py".  The problem with tmux sessions is if the code crashes it can be hard to establish why.
 
