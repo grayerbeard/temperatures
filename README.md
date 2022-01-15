@@ -16,7 +16,7 @@ Install Tmux using
 
 'sudo apt-get install tmux'
 
-Install  w1thermsensor (which is used to read in the temperature sensor(s))can be used to read in values from temperature sensors.  I have used this module and also read direct. The old version from 2018 di not use it. I expect I will change/update to use it.
+Install  w1thermsensor (which can be used to read in values from temperature sensors.  Recently I changed to using this module but in 2018 read values direct from the relavant system files. So the old version from 2018 did not use it. I expect I will change/update to use it.)
 
 'pip3 install w1thermsensor'
 
