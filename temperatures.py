@@ -254,11 +254,11 @@ def pr_status(appnd,ref,message):
 	
 	# @@@
 	#ftp_result = send_by_ftp(config.ftp_credentials_status_filename, config.status_filename,"use_cred")	
-	ftp_result = "Commented out line 257"
+	ftp_result = "257"
 	
 	# uncomment next lines for more info on FTP reults
-	for pres_ind in range(0, len(ftp_result)):
-		print (ftp_result[pres_ind])
+	#for pres_ind in range(0, len(ftp_result)):
+	#	print (ftp_result[pres_ind])
 	last_ref = ref
 	return
 
@@ -279,12 +279,12 @@ def pr_log(appnd,message):
 	
 	# @@@
 	#ftp_result = send_by_ftp(config.ftp_credentials_log_html_filename, config.log_html_filename,"use_cred")	
-	ftp_result = "Commented out line 282"
+	ftp_result = "282"
 	
 	# uncomment next lines for more info on FTP reults
-	for pres_ind in range(0,len(ftp_result)):
-		print (ftp_result[pres_ind]	)
-	return
+	#for pres_ind in range(0,len(ftp_result)):
+	#	print (ftp_result[pres_ind]	)
+	#return
 
 
 def fileexists(filename):
@@ -765,12 +765,15 @@ def read_in_schedule_data(sch_filename):
 	global sensors
 	global smartplug_info
 	global config
+	global schedule
 	here = "read_in_schedule_data"
 	pr(here, "Schedulke Data read in : ", schedule.__dict__ )
 	with open(sch_filename, 'r') as csvfile:
 		d_file = csv.DictReader(csvfile)
 		ind = 0
 		for row in d_file:
+			if int(row['index']) < 10 :
+				print ( row['index'],row['year'],row['month'],row['day'],row['hour'],row['minute'],row['target_temp'])
 			schedule.index.append(row['index'])
 			schedule.year.append(row['year'])
 			schedule.month.append(row['month'])
@@ -881,11 +884,11 @@ def send_temperature_data_using_ftp(ftp_credentials_file):
 	
 	# @@@
 	#ftp_result = send_by_ftp(ftp_credentials_file, config.html_filename,"use_cred")
-	ftp_result = "Commented out line 884"
+	ftp_result = "884"
 	
 	# uncomment following two for print of FTP
-	for pres_ind in range(0,len(ftp_result)):
-		print (ftp_result[pres_ind])
+	#for pres_ind in range(0,len(ftp_result)):
+	#	print (ftp_result[pres_ind])
 	
 	try:
 		# send the same html file to the local web site
@@ -1290,11 +1293,11 @@ def main(argv):
 			
 				# @@@
 				#ftp_result = send_by_ftp(config.ftp_credentials_log_filename, config.logging_filename, config.logging_filename_save_as)
-				ftp_result = "Commented out line 1293"
+				ftp_result = "1293"
 				
 				#uncomment following two lines to get info on FTP attempts
-				for pres_ind in range(0,len(ftp_result)):
-					print (ftp_result[pres_ind])
+				#for pres_ind in range(0,len(ftp_result)):
+				#	print (ftp_result[pres_ind])
 				
 				try:
 					copyfile(config.logging_filename, config.local_www_log_csv)
